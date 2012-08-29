@@ -1,9 +1,0 @@
-[0m[[0minfo[0m] [0mMyScalatraServletSpec[0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0mGET / on MyScalatraServlet[0m
-[0m[[0minfo[0m] [0m[32m+[0m should return status 200[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[0minfo[0m] [0mTotal for specification MyScalatraServletSpec[0m
-[0m[[0minfo[0m] [0m[34mFinished in 3 seconds, 67 ms[0m[0m
-[0m[[0minfo[0m] [0m[34m1 example, 0 failure, 0 error[0m[0m
-[0m[[0minfo[0m] [0m[0m

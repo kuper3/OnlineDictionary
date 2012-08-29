@@ -1,8 +1,8 @@
 import com.typesafe.startscript.StartScriptPlugin
 
-organization := "org.helloworld.scala.scalatra"
+organization := "com.github.kuper3.onlinedictionary"
 
-name := "HelloScalatra"
+name := "OnlineDictionary"
 
 version := "0.1.0-SNAPSHOT"
 
