@@ -15,7 +15,6 @@ class MainScalatraServlet extends ScalatraServlet with ScalateSupport {
     val t = params("t")
     Word.insertWord(new Word(e,t))
     
-    <h1>Hello, {t} </h1>
     
   }
   
