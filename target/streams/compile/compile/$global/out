@@ -1,0 +1,27 @@
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mInitial source changes: [0m
+[0m[[0mdebug[0m] [0m	removed:Set()[0m
+[0m[[0mdebug[0m] [0m	added: Set()[0m
+[0m[[0mdebug[0m] [0m	modified: Set(/media/TEMP/Program Files/eclipse/4.2/workspace/HelloScalatra/src/main/scala/org/helloworld/scala/scalatra/MainScalatraServlet.scala)[0m
+[0m[[0mdebug[0m] [0mRemoved products: Set()[0m
+[0m[[0mdebug[0m] [0mModified external sources: Set()[0m
+[0m[[0mdebug[0m] [0mModified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0mInitial directly invalidated sources: Set(/media/TEMP/Program Files/eclipse/4.2/workspace/HelloScalatra/src/main/scala/org/helloworld/scala/scalatra/MainScalatraServlet.scala)[0m
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mSources indirectly invalidated by:[0m
+[0m[[0mdebug[0m] [0m	product: Set()[0m
+[0m[[0mdebug[0m] [0m	binary dep: Set()[0m
+[0m[[0mdebug[0m] [0m	external source: Set()[0m
+[0m[[0mdebug[0m] [0mInitially invalidated: Set(/media/TEMP/Program Files/eclipse/4.2/workspace/HelloScalatra/src/main/scala/org/helloworld/scala/scalatra/MainScalatraServlet.scala)[0m
+[0m[[0minfo[0m] [0mCompiling 1 Scala source to /media/TEMP/Program Files/eclipse/4.2/workspace/HelloScalatra/target/scala-2.9.1/classes...[0m
+[0m[[0mdebug[0m] [0mInterfacing (CompilerInterface) with Scala compiler version 2.9.1.final[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-d[0m
+[0m[[0mdebug[0m] [0m	/media/TEMP/Program Files/eclipse/4.2/workspace/HelloScalatra/target/scala-2.9.1/classes[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/usr/lib/jvm/java-7-openjdk-i386/jre/lib/resources.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/rt.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/jsse.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/jce.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/charsets.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/netx.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/plugin.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/rhino.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/classes:/home/orest/.sbt/boot/scala-2.9.1/lib/scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/media/TEMP/Program Files/eclipse/4.2/workspace/HelloScalatra/target/scala-2.9.1/classes:/media/TEMP/Program Files/eclipse/4.2/workspace/HelloScalatra/lib/commons-dbcp-1.4.jar:/media/TEMP/Program Files/eclipse/4.2/workspace/HelloScalatra/lib/commons-lang-2.6.jar:/media/TEMP/Program Files/eclipse/4.2/workspace/HelloScalatra/lib/commons-pool-1.6.jar:/media/TEMP/Program Files/eclipse/4.2/workspace/HelloScalatra/lib/joda-convert-1.2.jar:/media/TEMP/Program Files/eclipse/4.2/workspace/HelloScalatra/lib/joda-time-2.1.jar:/media/TEMP/Program Files/eclipse/4.2/workspace/HelloScalatra/lib/postgresql-9.1-902.jdbc4.jar:/media/TEMP/Program Files/eclipse/4.2/workspace/HelloScalatra/lib/prequel_2.9.2-0.3.8.jar:/home/orest/.ivy2/cache/org.scalatra/scalatra/jars/scalatra-2.1.0.jar:/home/orest/.ivy2/cache/org.clapper/grizzled-slf4j_2.9.2/jars/grizzled-slf4j_2.9.2-0.6.9.jar:/home/orest/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.6.4.jar:/home/orest/.ivy2/cache/io.backchat.rl/rl_2.9.2/jars/rl_2.9.2-0.3.2.jar:/home/orest/.ivy2/cache/org.scalatra/scalatra-scalate/jars/scalatra-scalate-2.1.0.jar:/home/orest/.ivy2/cache/org.fusesource.scalate/scalate-core/bundles/scalate-core-1.5.3.jar:/home/orest/.ivy2/cache/org.fusesource.scalate/scalate-util/bundles/scalate-util-1.5.3.jar:/home/orest/.sbt/boot/scala-2.9.1/lib/scala-compiler.jar:/home/orest/.ivy2/cache/org.eclipse.jetty.orbit/javax.servlet/jars/javax.servlet-3.0.0.v201112011016.jar[0m
+[0m[[0mdebug[0m] [0m	/media/TEMP/Program Files/eclipse/4.2/workspace/HelloScalatra/src/main/scala/org/helloworld/scala/scalatra/MainScalatraServlet.scala[0m
+[0m[[0mdebug[0m] [0m	Invalidated direct: Set()[0m
+[0m[[0mdebug[0m] [0mIncrementally invalidated: Set()[0m
