@@ -1,6 +1,6 @@
 import org.scalatra._
 import javax.servlet.ServletContext
-import org.helloworld.scala.scalatra.MainScalatraServlet
+import com.github.kuper3.onlinedictionary.MainScalatraServlet
 
 /**
  * This is the Scalatra bootstrap file. You can use it to mount servlets or

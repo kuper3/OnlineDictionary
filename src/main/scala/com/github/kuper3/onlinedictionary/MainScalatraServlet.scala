@@ -2,7 +2,7 @@ package com.github.kuper3.onlinedictionary
 
 import org.scalatra._
 import scalate.ScalateSupport
-import org.helloworld.scala.scalatra.database.item.Word
+import com.github.kuper3.onlinedictionary.database.item.Word
 
 class MainScalatraServlet extends ScalatraServlet with ScalateSupport {
   
