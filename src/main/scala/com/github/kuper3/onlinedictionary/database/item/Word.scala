@@ -4,8 +4,8 @@ import net.noerd.prequel.DatabaseConfig
 import net.noerd.prequel.SQLFormatterImplicits._
 import net.noerd.prequel.ResultSetRowImplicits._
 
-class Word(val englishWord: String, val translation: String) {
-  override def toString = "["+ englishWord + " = " + translation +"]"
+case class Word(englishWord: String, translation: String) {
+  override def toString = englishWord + " = " + translation
 }
 
 object Word {
@@ -21,27 +21,35 @@ object Word {
     }
   }
 
-//  def insertWords(bikes: Seq[Word]): Unit = {
-//    database.transaction { tx =>
-//      tx.executeBatch("insert into Words( id, brand ) values( ?, ?)") { statement =>
-//        bikes.foreach { bike =>
-//          statement.executeWith(bike.id, bike.brand)
-//        }
-//      }
-//    }
-//  }
+  def insertWords(words: Seq[Word]): Unit = {
+    database.transaction { tx =>
+      tx.executeBatch("insert into Words( englishWord, translation ) values( ?, ?)") { statement =>
+        words.foreach { word =>
+          statement.executeWith(word.englishWord, word.translation)
+        }
+      }
+    }
+  }
 
-  def fetchWords(): Seq[Word] = {
+  def fetchWords: Seq[Word] = {
     database.transaction { tx =>
       tx.select("select englishWord, translation from Words") { r =>
         new Word(r, r)
       }
     }
   }
+  
+  def random = {
+    database.transaction { tx =>
+      tx.select("SELECT englishWord, translation FROM words ORDER BY RANDOM() LIMIT 1") { r =>
+        new Word(r,r)
+      }
+    }
+  }
 
   def createTable: Unit = {
     database.transaction { tx =>
-      tx.execute("CREATE TABLE IF NOT EXISTS Words (englishWord varchar(25), translation text)")
+      tx.execute("CREATE TABLE IF NOT EXISTS Words (englishWord varchar(25), translation text);")
     }
   }
 

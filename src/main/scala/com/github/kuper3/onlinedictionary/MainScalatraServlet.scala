@@ -4,18 +4,20 @@ import org.scalatra._
 import scalate.ScalateSupport
 import com.github.kuper3.onlinedictionary.database.item.Word
 
-class MainScalatraServlet extends ScalatraServlet with ScalateSupport {
+class MainScalatraServlet extends ScalatraServlet { 
+  
+  before() {
+    Word.createTable
+  }
   
   get("/") {
     <h1>Hello World!</h1>
-  }
+  } 
   
   get("/add") {
     val e = params("e")
     val t = params("t")
     Word.insertWord(new Word(e,t))
-    
-    
   }
   
   get("/show") {
@@ -25,13 +27,12 @@ class MainScalatraServlet extends ScalatraServlet with ScalateSupport {
     text
   }
   
-  get("/init") {
-    Word.createTable
+  get("/random") {
+    Word.random.mkString
   }
   
   get("/clear") {
     Word.dropTable
   }
- 
 
 }
