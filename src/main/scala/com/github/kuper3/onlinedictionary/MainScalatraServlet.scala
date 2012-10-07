@@ -17,12 +17,14 @@ class MainScalatraServlet extends ScalatraServlet {
   get("/add") {
     val e = params("e")
     val t = params("t")
-    Word.insertWord(new Word(e,t))
+    if (!e.isEmpty() && !t.isEmpty()) {
+    	Word.insertWord(new Word(e,t))
+    }
   }
   
   get("/show") {
     val words = Word.fetchWords
-    var text : String = ""
+    var text = ""
     words.foreach( w => text += w.englishWord +"\t" +w.translation + "\n")
     text
   }

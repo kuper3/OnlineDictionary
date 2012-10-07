@@ -13,27 +13,17 @@ object Word {
     driver = "org.postgresql.Driver",
     jdbcURL = "jdbc:postgresql://localhost:5432/test1?user=postgres&password=pwd")
 
-  def insertWord(word: Word): Unit = {
+  def insert(word: Word): Unit = {
     database.transaction { tx =>
       tx.execute(
-        "insert into Words( englishWord, translation ) values( ?, ?)",
+        "INSERT INTO Words( englishWord, translation ) VALUES( ?, ?)",
         word.englishWord, word.translation)
     }
   }
 
-  def insertWords(words: Seq[Word]): Unit = {
+  def fetch: Seq[Word] = {
     database.transaction { tx =>
-      tx.executeBatch("insert into Words( englishWord, translation ) values( ?, ?)") { statement =>
-        words.foreach { word =>
-          statement.executeWith(word.englishWord, word.translation)
-        }
-      }
-    }
-  }
-
-  def fetchWords: Seq[Word] = {
-    database.transaction { tx =>
-      tx.select("select englishWord, translation from Words") { r =>
+      tx.select("SELECT englishWord, translation FROM words") { r =>
         new Word(r, r)
       }
     }
@@ -49,13 +39,13 @@ object Word {
 
   def createTable: Unit = {
     database.transaction { tx =>
-      tx.execute("CREATE TABLE IF NOT EXISTS Words (englishWord varchar(25), translation text);")
+      tx.execute("CREATE TABLE IF NOT EXISTS words (englishWord varchar(25) NOT NULL CHECK(englishWord <> ''), translation text NOT NULL CHECK(translation <> ''));")
     }
   }
 
   def dropTable: Unit = {
     database.transaction { tx =>
-      tx.execute("DROP TABLE IF EXISTS Words ")
+      tx.execute("DROP TABLE IF EXISTS words ")
     }
   }
 }
