@@ -5,7 +5,7 @@ import net.noerd.prequel.SQLFormatterImplicits._
 import net.noerd.prequel.ResultSetRowImplicits._
 
 case class Word(englishWord: String, translation: String) {
-  override def toString = englishWord + " = " + translation
+  override def toString = englishWord + " : " + translation
 }
 
 object Word {

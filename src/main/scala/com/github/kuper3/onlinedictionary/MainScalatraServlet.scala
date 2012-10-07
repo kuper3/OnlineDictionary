@@ -15,15 +15,18 @@ class MainScalatraServlet extends ScalatraServlet {
   } 
   
   get("/add") {
-    val e = params("e")
-    val t = params("t")
+    val msg = "The request cannot be fulfilled due to bad syntax."
+    val e = params.getOrElse("e",halt(status = 400,body = msg))
+    val t = params.getOrElse("t",halt(status = 400,body = msg))
     if (!e.isEmpty() && !t.isEmpty()) {
-    	Word.insertWord(new Word(e,t))
+    	Word.insert(new Word(e,t))
+    } else {
+      halt(status = 400,body = msg)
     }
   }
   
   get("/show") {
-    val words = Word.fetchWords
+    val words = Word.fetch
     var text = ""
     words.foreach( w => text += w.englishWord +"\t" +w.translation + "\n")
     text
