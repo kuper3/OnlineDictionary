@@ -13,7 +13,7 @@ object Word {
     driver = "org.postgresql.Driver",
     jdbcURL = "jdbc:postgresql://localhost:5432/test1?user=postgres&password=pwd")
 
-  def insert(word: Word): Unit = {
+  def insert(word: Word) = {
     database.transaction { tx =>
       tx.execute(
         "INSERT INTO Words( englishWord, translation ) VALUES( ?, ?)",
@@ -37,15 +37,30 @@ object Word {
     }
   }
 
+  // util method for testing
+  def delete(word: Word) = {
+    database.transaction { tx =>
+      tx.execute("DELETE FROM words WHERE englishWord=? and translation=?",
+      word.englishWord, word.translation)
+    }
+  }
+
+
   def createTable: Unit = {
     database.transaction { tx =>
-      tx.execute("CREATE TABLE IF NOT EXISTS words (englishWord varchar(25) NOT NULL CHECK(englishWord <> ''), translation text NOT NULL CHECK(translation <> ''));")
+      tx.execute("CREATE TABLE IF NOT EXISTS words (englishWord varchar(25) NOT NULL CHECK(englishWord <> ''), translation text NOT NULL CHECK(translation <> ''))")
     }
   }
 
   def dropTable: Unit = {
     database.transaction { tx =>
       tx.execute("DROP TABLE IF EXISTS words ")
+    }
+  }
+
+  def clearTable: Unit = {
+    database.transaction { tx =>
+      tx.execute("TRUNCATE TABLE IF EXISTS words ")
     }
   }
 }
