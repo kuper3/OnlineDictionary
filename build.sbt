@@ -1,4 +1,4 @@
-//import com.typesafe.startscript.StartScriptPlugin
+import com.typesafe.startscript.StartScriptPlugin
 
 organization := "com.github.kuper3.onlinedictionary"
 
@@ -10,7 +10,7 @@ scalaVersion := "2.9.1"
 
 seq(webSettings :_*)
 
-//seq(StartScriptPlugin.startScriptForClassesSettings: _*)
+seq(StartScriptPlugin.startScriptForClassesSettings: _*)
 
 classpathTypes ~= (_ + "orbit")
 
