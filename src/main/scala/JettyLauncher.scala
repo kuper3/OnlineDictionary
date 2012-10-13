@@ -19,7 +19,7 @@ object JettyLauncher {
     //context.addFilter(classOf[MainScalatraServlet], "/*", 0)
     context.addFilter(classOf[MainScalatraServlet], "/*", EnumSet.of(DispatcherType.INCLUDE))
     context.addServlet(classOf[DefaultServlet], "/");
-    context.setResourceBase("src/main/scala")
+    context.setResourceBase("/")
 
     server.start
     server.join
