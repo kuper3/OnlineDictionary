@@ -4,7 +4,7 @@ import org.scalatra._
 import scalate.ScalateSupport
 import com.github.kuper3.onlinedictionary.database.item.Word
 
-class MainScalatraServlet extends ScalatraServlet { 
+class MainScalatraServlet extends ScalatraFilter { 
   
   before() {
     Word.createTable
