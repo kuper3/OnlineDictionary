@@ -3,15 +3,35 @@ package com.github.kuper3.onlinedictionary.database.item
 import net.noerd.prequel.DatabaseConfig
 import net.noerd.prequel.SQLFormatterImplicits._
 import net.noerd.prequel.ResultSetRowImplicits._
+import java.net.URI
 
 case class Word(englishWord: String, translation: String) {
   override def toString = englishWord + " : " + translation
 }
 
 object Word {
-  val database = DatabaseConfig(
-    driver = "org.postgresql.Driver",
-    jdbcURL = "jdbc:postgresql://localhost:5432/test1?user=postgres&password=pwd")
+
+  val DbDriver = "org.postgresql.Driver"
+  private def getDb = {
+     if (System.getenv("DATABASE_URL") != null) {
+       val dbUri = new URI(System.getenv("DATABASE_URL"))
+       val dbUsername = dbUri.getUserInfo().split(":")(0)
+       val dbPassword = dbUri.getUserInfo().split(":")(1)
+       DatabaseConfig(driver = DbDriver,
+              jdbcURL = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath() + ":" + dbUri.getPort(),
+              username = dbUsername,
+              password = dbPassword)
+     } else {
+        //"jdbc:postgresql://localhost:5432/test1?user=postgres&password=pwd"
+	DatabaseConfig(
+	    driver = DbDriver,
+	    jdbcURL = "jdbc:postgresql://localhost:5432/test1?user=postgres&password=pwd")
+
+     }           
+    
+  }
+  
+  val database = getDb
 
   def insert(word: Word) = {
     database.transaction { tx =>
