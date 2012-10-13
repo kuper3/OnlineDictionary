@@ -6,7 +6,7 @@ name := "OnlineDictionary"
 
 version := "0.1.0"
 
-scalaVersion := "2.9.1"
+scalaVersion := "2.9.2"
 
 seq(webSettings :_*)
 
@@ -23,9 +23,12 @@ libraryDependencies ++= Seq(
   "commons-dbcp" % "commons-dbcp" % "1.4",
   "commons-lang" % "commons-lang" % "2.6",
   "postgresql" % "postgresql" % "9.1-901.jdbc4",
-  "ch.qos.logback" % "logback-classic" % "1.0.6" % "runtime",
-  "org.eclipse.jetty" % "jetty-webapp" % "8.1.5.v20120716" % "container",  
-  "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" % "container;provided;test" artifacts (Artifact("javax.servlet", "jar", "jar"))
+  "ch.qos.logback" % "logback-classic" % "1.0.6" % "runtime", 
+  "org.eclipse.jetty" % "jetty-webapp" % "8.1.3.v20120416" % "container",
+  "org.eclipse.jetty" % "jetty-server" % "8.1.3.v20120416" % "container",
+  "org.eclipse.jetty" % "jetty-webapp" % "8.1.3.v20120416",
+  "org.eclipse.jetty" % "jetty-server" % "8.1.3.v20120416",
+  "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" % "compile;container;provided;test" artifacts (Artifact("javax.servlet", "jar", "jar"))
 )
 
 // Test Dependencies
@@ -34,5 +37,5 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "1.8" % "test",
   "com.novocode" % "junit-interface" % "0.8" % "test->default",
   "junit" % "junit" % "4.8.1" % "test",
-  "org.eclipse.jetty" % "test-jetty-servlet" % "8.1.5.v20120716" % "test"
+  "org.eclipse.jetty" % "test-jetty-servlet" % "8.1.3.v20120416" % "test"
 )
